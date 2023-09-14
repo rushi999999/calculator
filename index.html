@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="eng">
+<head>
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="all">
+        <h2 class="heding">calculator</h2>
+      <div class="text">
+         <input class="text" type="text" placeholder="0" style="margin: 2px;">
+         <button id="c"; style="padding: 2px;">c</button>
+       </div>
+    <div class="p">
+    <div class="parent" id="1"><button type="button">1</button></div>
+    <div class="parent" id="2"><button type="button">2</button></div>
+    <div class="parent" id="3"><button type="button">3</button></div>
+    <div class="parent" id="-"><button type="button">-</button></div>
+    <div class="parent" id="4"><button type="button">4</button></div>
+    <div class="parent" id="5"><button type="button">5</button></div>
+    <div class="parent" id="6"><button type="button">6</button></div>
+    <div class="parent" id="+"><button type="button">+</button></div>
+    <div class="parent" id="7"><button type="button">7</button></div>
+    <div class="parent" id="8"><button type="button">8</button></div>
+    <div class="parent" id="9"><button type="button">9</button></div>
+    <div class="parent" id="%"><button type="button">%</button></div>
+    </div>
+    <div class="equal">
+    <div class="parent1"><button type="button">0</button></div>
+    
+    <div class="parent1"><button type="button">*</button></div>
+    <div class="parent1"><button class="pa" type="button">=</button></div>
+    </div>
+
+</div>
+
+<script>
+   let str = " ";
+let buttons = document.querySelectorAll('button');
+Array.from(buttons).forEach((button)=>{
+    button.addEventListener('click',(e)=>{
+        if(e.target.innerHTML== '='){
+            str = eval(str);
+            document.querySelector('input').value =str;
+        }
+        else if(e.target.innerHTML== 'c'){
+            str = " ";
+            document.querySelector('input').value =str;
+        }
+        else{                                                                                                                                                                                                                                                                                                          
+           console.log(e.target)
+           str = str + e.target.innerHTML;
+           document.querySelector('input').value = str;
+        }
+})
+})
+</script>
+
+
+</body>
+</html>
